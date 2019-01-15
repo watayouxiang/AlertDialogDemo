@@ -110,7 +110,17 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(mContext, "onCancel", Toast.LENGTH_SHORT).show();
             }
         });
-        //设置弹窗参数
+        //设置自定义布局
+        View rootView = getLayoutInflater().inflate(R.layout.view_my_dialog, null);
+        rootView.findViewById(R.id.tv_cancel).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.cancel();
+            }
+        });
+        alertDialog.setView(rootView);
+        alertDialog.show();
+        //设置弹窗参数（注意：弹窗样式修改必须在 dialog.show() 方法后调用，否则不生效）
         Window window = alertDialog.getWindow();
         if (window != null) {
             window.setGravity(Gravity.CENTER);
@@ -122,15 +132,5 @@ public class MainActivity extends AppCompatActivity {
             params.width = (int) (getWindowManager().getDefaultDisplay().getWidth() * 0.8f);
             window.setAttributes(params);
         }
-        //设置自定义布局
-        View rootView = getLayoutInflater().inflate(R.layout.view_my_dialog, null);
-        rootView.findViewById(R.id.tv_cancel).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                alertDialog.cancel();
-            }
-        });
-        alertDialog.setView(rootView);
-        alertDialog.show();
     }
 }
