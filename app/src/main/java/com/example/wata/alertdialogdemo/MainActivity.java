@@ -24,6 +24,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    /**
+     * 最简单的 AlertDialog
+     *
+     * @param view
+     */
     public void showSimpleDialog(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setIcon(R.mipmap.ic_launcher);
@@ -35,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
+    /**
+     * AlertDialog 添加额外 View
+     *
+     * @param view
+     */
     public void setView(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Title");
@@ -45,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
+    /**
+     * 单选列表 AlertDialog
+     *
+     * @param view
+     */
     public void setSingleChoiceItems(View view) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("单选列表");
@@ -63,6 +78,11 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
+    /**
+     * 多选列表 AlertDialog
+     *
+     * @param view
+     */
     public void setMultiChoiceItems(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("多选列表");
@@ -81,6 +101,11 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
+    /**
+     * 多条目 AlertDialog
+     *
+     * @param view
+     */
     public void setItems(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Title");
@@ -98,6 +123,11 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
+    /**
+     * 完全自定义 AlertDialog
+     *
+     * @param view
+     */
     public void showMyDialog(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         final AlertDialog alertDialog = builder.create();
